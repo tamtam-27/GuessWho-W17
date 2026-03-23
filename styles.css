@@ -1,0 +1,51 @@
+body {
+    background-color: antiquewhite;
+}
+
+.head_intro {
+    text-align: center;
+}
+
+.par_intro {
+    margin: 2%
+}
+
+.div_intro_text {
+    position: fixed;
+    background-color: aliceblue;
+    border-color: pink;
+    border: solid;
+    border-width: 5px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    z-index: 1000;
+}
+
+.button_zurück {
+    background-color: green;
+    cursor: pointer;
+    margin-bottom: 1%;
+}
+
+.button_regel {
+    background-color: green;
+    cursor: pointer;
+}
+
+.black_overlay {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .80;
+    z-index: 999;
+}
+
+.hidden {
+    display: none;
+}

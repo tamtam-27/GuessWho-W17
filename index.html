@@ -4,34 +4,40 @@
 
 <head>
     <title> Guess Who? W17-Edition </title>
-    <link rel="icon" type="sagas" href="Misc_Pics/pedro.gif">
-    <link rel="stylesheet" href="stiles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <div class="black_overlay" hidden></div>
+    <div class="div_intro_text" hidden>
+        <h1 class="head_intro">Hello and welcome!</h1>
+        <p class="par_intro">
+            Eh idk wieso dieser Text überhaupt hier steht, aber jedes Spiel braucht doch ein Intro xD<br>
+            Wie ihr schon sehen könnt, ist das ein "Wer ist es?" Spiel aber halt mit unserer Klasse. (creds to whoever
+            had the idea, forgot who that was sry!)<br>
+            Die Regeln sind gleich. Am besten vor Ort sein aber, da die Personen-Auswahl wahrscheinlich noch nid
+            funktioniert 😅.<br>
+            Ihr könnt auf die jeweilige Person tippen und sie so umdrehen (und nochmals tippen zum sie wieder
+            aufdecken). <br>
+            Der Reset-Knopf deckt alle Karten wieder auf.<br>
+            Der Regel-Knopf zeigt diesen wundervollen Text wieder.<br>
+            <br>Na dann... Auf geht's!<br>
+        </p>
+        <button class="button_zurück" onclick="showRules()">zurück</button>
+    </div>
+
     <script>
-        function myFunction() {
-            console.log("Hello World");
+        function showRules() {
+            document.querySelectorAll('.div_intro_text, .black_overlay').forEach(el => {
+                el.hidden = !el.hidden;
+            });
         }
     </script>
 
-    <script>
-        function myFunc() {
-            console.log("Hello EYE");
-        }
-    </script>
+    <button class="button_regel" onclick="showRules()"> Regel </button>
 
-    <div>
-        <h1 class="head1"> Guess Who? W17-Edition </h1>
-    </div>
 
-    <div>
-        <button onclick="myFunction()" class="basic_button"> BIG </button>
-    </div>
-
-    <div>
-        <input type="image" src="Misc_Pics/erebeye.png" onclick="myFunc()">
-    </div>
 
 </body>
 

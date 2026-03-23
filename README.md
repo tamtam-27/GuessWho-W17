@@ -1,2 +1,2 @@
-# tamtam-27.github.io
+# GuessWho-W17
 Guess Who? - W17 Edition
