@@ -11,7 +11,7 @@
 <body>
     <div class="black_overlay" hidden></div>
     <div class="div_regel" hidden>
-        <h1 class="head_regel">Hello and welcome!</h1>
+        <h1 class="head_regel">hello and welcome!</h1>
         <p class="par_regel">
             Eh idk wieso dieser Text überhaupt hier steht, aber jedes Spiel braucht doch ein Intro xD<br>
             Wie ihr schon sehen könnt, ist das ein "Wer ist es?" Spiel aber halt mit unserer Klasse. (creds to whoever
@@ -27,9 +27,6 @@
             Bild?" nicht möglich sein.
         </p>
         <p class="par_regel">
-            Der Reset-Knopf deckt alle Karten wieder auf und der Regel-Knopf zeigt diesen wundervollen Text wieder.
-        </p>
-        <p class="par_regel">
             Na dann... Auf geht's!
         </p>
         <button class="button_zurück" onclick="showRules()">zurück</button>
@@ -37,22 +34,16 @@
 
     <div class="div_list hidden">
         <p class="par_regel">
-            This is a list of all People:<br>
-            (you can click on their name to highlight who you got)<br>
+            Liste von allen Personen:<br>
         </p>
         <button class="button_list_randomChar" onclick="randomChar()"> ¿PERSON? </button>
         <button class="button_zurück" onclick="showList()">zurück</button>
     </div>
 
-    <div id="popup_char" class="hidden">
-        <h1 id="popup_text"></h1>
-        <button class="button_zurück" onclick="closePopup()"> close</button>
-    </div>
-
     <div class="div_buttons">
         <button class="button_regel" onclick="showRules()"> Regel </button>
 
-        <button class="button_list" onclick="showList()"> List </button>
+        <button class="button_list" onclick="showList()"> Personen </button>
 
         <button class="button_reset" onclick="darkReset()"> Reset </button>
     </div>

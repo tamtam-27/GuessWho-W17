@@ -76,18 +76,21 @@ function showList() {
 }
 
 function randomChar() {
+    const highlighted = document.querySelector(".highlight");
+    if (highlighted) {
+        return;
+    }
+
     const randChar = allGroups[Math.floor(Math.random() * allGroups.length)];
 
-    const box = document.getElementById("popup_char");
-    const text = document.getElementById("popup_text");
-
-    text.textContent = randChar;
-    box.classList.remove("hidden");
+    const allChars = document.querySelectorAll(".list_wrapper li");
+    allChars.forEach(li => {
+        if (li.textContent === randChar) {
+            li.classList.add("highlight");
+        }
+    });
 }
 
-function closePopup() {
-    document.getElementById("popup_char").classList.add("hidden");
-}
 
 const groups = {
     five: { items: ["Oscar"], max: 5 },
