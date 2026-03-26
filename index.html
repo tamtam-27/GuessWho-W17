@@ -10,34 +10,56 @@
 
 <body>
     <div class="black_overlay" hidden></div>
-    <div class="div_intro_text" hidden>
-        <h1 class="head_intro">Hello and welcome!</h1>
-        <p class="par_intro">
+    <div class="div_regel" hidden>
+        <h1 class="head_regel">Hello and welcome!</h1>
+        <p class="par_regel">
             Eh idk wieso dieser Text überhaupt hier steht, aber jedes Spiel braucht doch ein Intro xD<br>
             Wie ihr schon sehen könnt, ist das ein "Wer ist es?" Spiel aber halt mit unserer Klasse. (creds to whoever
-            had the idea, forgot who that was sry!)<br>
+            had the idea, forgot who that was sry!)
+        </p>
+        <p class="par_regel">
             Die Regeln sind gleich. Am besten vor Ort sein aber, da die Personen-Auswahl wahrscheinlich noch nid
-            funktioniert 😅.<br>
+            funktioniert 😅.
+            Ausserdem seht ihr nur euer eigenes Board mit allen Personen.
             Ihr könnt auf die jeweilige Person tippen und sie so umdrehen (und nochmals tippen zum sie wieder
-            aufdecken). <br>
-            Der Reset-Knopf deckt alle Karten wieder auf.<br>
-            Der Regel-Knopf zeigt diesen wundervollen Text wieder.<br>
-            <br>Na dann... Auf geht's!<br>
+            aufdecken).
+            Die Bilder sind allerdings randomized, also werden die Fragen wie z.B. "Trägt die Person einen Hut auf dem
+            Bild?" nicht möglich sein.
+        </p>
+        <p class="par_regel">
+            Der Reset-Knopf deckt alle Karten wieder auf und der Regel-Knopf zeigt diesen wundervollen Text wieder.
+        </p>
+        <p class="par_regel">
+            Na dann... Auf geht's!
         </p>
         <button class="button_zurück" onclick="showRules()">zurück</button>
     </div>
 
-    <script>
-        function showRules() {
-            document.querySelectorAll('.div_intro_text, .black_overlay').forEach(el => {
-                el.hidden = !el.hidden;
-            });
-        }
-    </script>
+    <div class="div_list hidden">
+        <p class="par_regel">
+            This is a list of all People:<br>
+            (you can click on their name to highlight who you got)<br>
+        </p>
+        <button class="button_list_randomChar" onclick="randomChar()"> ¿PERSON? </button>
+        <button class="button_zurück" onclick="showList()">zurück</button>
+    </div>
 
-    <button class="button_regel" onclick="showRules()"> Regel </button>
+    <div id="popup_char" class="hidden">
+        <h1 id="popup_text"></h1>
+        <button class="button_zurück" onclick="closePopup()"> close</button>
+    </div>
 
+    <div class="div_buttons">
+        <button class="button_regel" onclick="showRules()"> Regel </button>
 
+        <button class="button_list" onclick="showList()"> List </button>
+
+        <button class="button_reset" onclick="darkReset()"> Reset </button>
+    </div>
+
+    <div id="screen"></div>
+
+    <script src="script.js"></script>
 
 </body>
 

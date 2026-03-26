@@ -1,38 +1,114 @@
 body {
     background-color: antiquewhite;
+    text-align: center;
+    margin-inline: 1.5%;
 }
 
-.head_intro {
+li {
+    cursor: pointer;
+    width: max-content;
     text-align: center;
 }
 
-.par_intro {
+#screen {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 0 auto;
+    border: dotted;
+    border-width: 5px;
+    border-color: olivedrab;
+}
+
+#popup_char {
+    position: fixed;
+    background-color: #E2725B;
+    border-color: black;
+    border: solid;
+    border-width: 5px;
+    text-align: center;
+    justify-content: center;
+    z-index: 1001;
+    height: 10%;
+    width: 15%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.head_regel {
+    text-align: center;
+}
+
+.par_regel {
     margin: 2%
 }
 
-.div_intro_text {
+.div_regel {
     position: fixed;
-    background-color: aliceblue;
-    border-color: pink;
+    background-color: antiquewhite;
     border: solid;
     border-width: 5px;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
     text-align: center;
     z-index: 1000;
+    height: 80%;
+    width: 80%;
+    overflow: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.div_list {
+    position: fixed;
+    background-color: antiquewhite;
+    border: solid;
+    text-align: center;
+    z-index: 1000;
+    border-width: 5px;
+    text-align: center;
+    height: 80%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+}
+
+.div_buttons {
+    background-color: #E1D3C1;
+    margin: 2%;
+    height: 69px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
+
+.button_regel,
+.button_list,
+.button_reset {
+    background-color: olivedrab;
+    cursor: pointer;
+    height: 60%;
+    width: 60%;
+    margin: auto;
+    font-size: large;
+}
+
+.button_list_randomChar {
+    background-color: #E2725B;
+    font-size: large;
+    cursor: pointer;
 }
 
 .button_zurück {
-    background-color: green;
+    background-color: #BDB76B;
     cursor: pointer;
-    margin-bottom: 1%;
-}
-
-.button_regel {
-    background-color: green;
-    cursor: pointer;
+    font-size: large;
 }
 
 .black_overlay {
@@ -48,4 +124,48 @@ body {
 
 .hidden {
     display: none;
+}
+
+.black_filter {
+    filter: brightness(20%);
+}
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.list_wrapper {
+    display: flex;
+    gap: 15%;
+    justify-content: center;
+
+}
+
+.list_column {
+    text-align: center;
+    flex: 1;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list_header {
+    margin-bottom: -8%;
+}
+
+.dynlisti,
+.dynlistu {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+[id^="pic_"] {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    margin: 0 auto;
 }
