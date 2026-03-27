@@ -8,6 +8,7 @@ li {
     cursor: pointer;
     width: max-content;
     text-align: center;
+    margin-top: 8%;
 }
 
 h3 {
@@ -31,7 +32,7 @@ h3 {
 
 .par_regel {
     margin: 2%;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .div_regel {
@@ -40,8 +41,8 @@ h3 {
     border: 5px solid darkolivegreen;
     text-align: center;
     z-index: 1000;
-    height: 80%;
-    width: 80%;
+    height: 90%;
+    width: 90%;
     overflow: auto;
     top: 50%;
     left: 50%;
@@ -56,8 +57,8 @@ h3 {
     z-index: 1000;
     border-width: 5px;
     text-align: center;
-    height: 80%;
-    width: 70%;
+    height: 90%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,9 +83,9 @@ h3 {
     background-color: olivedrab;
     cursor: pointer;
     height: 60%;
-    width: 60%;
+    width: 70%;
     margin: auto;
-    font-size: 20px;
+    font-size: 16px;
     color: black;
     border: 2px solid darkolivegreen;
 }
@@ -92,15 +93,16 @@ h3 {
 .button_list_randomChar {
     background-color: #E2725B;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px;
     color: black;
     border: 2px solid darkolivegreen;
+    z-index: 1001;
 }
 
 .button_zurück {
     background-color: #BDB76B;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 16px;
     color: black;
     border: 2px solid darkolivegreen;
 }
@@ -132,15 +134,14 @@ h3 {
 
 .list_wrapper {
     display: flex;
-    gap: 15%;
     justify-content: center;
-
+    margin-top: -5%;
 }
 
 .list_column {
     text-align: center;
     flex: 1;
-    min-width: 100%;
+    min-width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -152,10 +153,10 @@ h3 {
 
 .dynlisti,
 .dynlistu {
-    /* list-style-type: none; */
-    /* padding: 0; */
+    list-style-type: none;
+    padding: 0;
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 [id^="pic_"] {
