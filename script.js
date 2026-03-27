@@ -27,24 +27,18 @@ function darken(element) {
 }
 
 function darkReset() {
-    const pics = document.querySelectorAll('[id^="pic_"]');
+    const pics = document.querySelectorAll('[id^="pic_"], .highlight');
     pics.forEach(pic => {
-        pic.classList.remove("black_filter");
-    });
-
-    const highlighted = document.querySelectorAll(".highlight");
-    highlighted.forEach(el => {
-        el.classList.remove("highlight");
+        pic.classList.remove("black_filter", "highlight");
     });
 }
 
 function showList() {
     const container = document.querySelector(".div_list");
     const overlay = document.querySelector(".black_overlay");
+
     container.classList.toggle("hidden");
-    if (overlay) {
-        overlay.hidden = !overlay.hidden;
-    }
+    overlay?.toggleAttribute("hidden");
 
     let wrapper = container.querySelector(".list_wrapper");
 
@@ -52,34 +46,14 @@ function showList() {
         wrapper = document.createElement("div");
         wrapper.className = "list_wrapper";
 
-        const createCol = (title, items, listClass) => {
-            const colu = document.createElement("div");
-            colu.className = "list_column";
+        wrapper.appendChild(createCol("Schüler", allStudents, "dynlisti"));
+        wrapper.appendChild(createCol("Lehrperson", allTeachers, "dynlistu"));
 
-            const header = document.createElement("h3");
-            header.textContent = title;
-            header.className = "list_header";
-            colu.appendChild(header);
-
-            const ul = document.createElement("ul");
-            ul.className = listClass;
-            items.forEach(item => {
-                const li = document.createElement("li");
-                li.textContent = item;
-                li.onclick = function () {
-                    this.classList.toggle("highlight");
-                }
-                ul.appendChild(li);
-            });
-            colu.appendChild(ul);
-            return colu;
-        };
-
-        const colStudent = createCol("Schüler", allStudents, "dynlisti");
-        const colTeach = createCol("Lehrperson", allTeachers, "dynlistu");
-
-        wrapper.appendChild(colStudent);
-        wrapper.appendChild(colTeach);
+        wrapper.addEventListener("click", (e) => {
+            if (e.target.tagName === "LI") {
+                e.target.classList.toggle("highlight");
+            }
+        })
 
         const anchor = container.querySelector(".button_zurück");
         container.insertBefore(wrapper, anchor);
@@ -88,20 +62,32 @@ function showList() {
     }
 }
 
-function randomChar() {
-    const highlighted = document.querySelector(".highlight");
-    if (highlighted) {
-        return;
-    }
 
+function createCol(title, items, listClass) {
+    const colu = document.createElement("div");
+    colu.className = "list_column";
+
+    const header = document.createElement("h3");
+    header.textContent = title;
+    header.className = "list_header";
+
+    const ul = document.createElement("ul");
+    ul.className = listClass;
+    ul.innerHTML = items.map(item => `<li>${item}</li>`).join("");
+    colu.append(header, ul);
+    return colu;
+};
+
+
+function randomChar() {
+    if (document.querySelector(".highlight")) return;
+
+    const all = [...allStudents, ...allTeachers];
     const randChar = allStudents.concat(allTeachers)[Math.floor(Math.random() * (allStudents.length + allTeachers.length))];
 
-    const allChars = document.querySelectorAll(".list_wrapper li");
-    allChars.forEach(li => {
-        if (li.textContent === randChar) {
-            li.classList.add("highlight");
-        }
-    });
+    const target = [...document.querySelectorAll(".list_wrapper li")].find(li => li.textContent === randChar);
+
+    target?.classList.add("highlight");
 }
 
 function loadMedia() {
@@ -113,13 +99,13 @@ function loadMedia() {
         group.items.forEach(name => {
             const pic = document.createElement("img");
 
+            const randVer = Math.floor(Math.random() * group.max) + 1;
+
             pic.id = `pic_${name}`;
             pic.alt = name;
-
-            const randVer = Math.floor(Math.random() * group.max) + 1;
             pic.src = `${baseUrl}${name}${randVer}.png`;
 
-            pic.addEventListener("click", () => darken(pic));
+            pic.addEventListener("click", () => pic.classList.toggle("black_filter"));
 
             screen.appendChild(pic);
         });
