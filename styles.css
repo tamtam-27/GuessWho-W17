@@ -18,12 +18,13 @@ h3 {
 #screen {
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     gap: 10px;
     margin: 0 auto;
     border: dotted;
     border-width: 5px;
     border-color: olivedrab;
+    width: 100%;
 }
 
 .head_regel {

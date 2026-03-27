@@ -1,3 +1,21 @@
+const allStudents = [
+    "Alyosha", "Amelie", "Andreas", "Annina", "Anastasia", "Ardita", "Daria", "Dominik", "Gian Reto", "Gianni",
+    "Jannis", "Jesse", "Juliana", "Katja", "Lorena", "Loris", "Moritz", "Paula", "Pit", "Ronja",
+    "Silvan", "Simon", "Sude", "Tam Gian", "Yannick", "Zahir"
+]
+const allTeachers = [
+    "Anika", "Bosshart", "Castelberger", "Chenevard", "Dirks", "Frei", "Frischknecht", "Fritschi", "Graf", "Hofer (f.)",
+    "Hofer (m.)", "Jack", "Kühnis", "Listemann", "Oehler", "Reuteler", "Rothenberger", "Schmidt", "Stronski", "Tscholl",
+    "Weber", "Wyss", "Zesiger"
+]
+const studteach = {
+    five: { items: ["ango", "arna", "juma", "suba", "tang"], max: 5 },
+    four: { items: ["aler", "gikn", "oehl", "yala"], max: 4 },
+    three: { items: ["amla", "jahu", "list", "lori", "pazw", "pisc", "rojä", "zesi"], max: 3 },
+    two: { items: ["aner", "anik", "dapf", "dost", "giga", "graf", "kawa", "lowo", "sien", "tsch", "wyss", "zask"], max: 2 },
+    one: { items: ["anst", "boss", "cast", "chen", "dirk", "frei", "fris", "frit", "hoff", "hofm", "jack", "jest", "kühn", "mobe", "reut", "roth", "schm", "sivo", "stro", "webe"], max: 1 }
+}
+
 function showRules() {
     document.querySelectorAll('.div_regel, .black_overlay').forEach(el => {
         el.hidden = !el.hidden;
@@ -19,11 +37,6 @@ function darkReset() {
         el.classList.remove("highlight");
     });
 }
-
-const allGroups = ["Alpha", "Echo", "Golf", "Kilo", "November", "Oscar", "Tango", "Victor", "Whiskey"];
-
-const allGroups1 = ["Alpha", "Echo", "Golf", "Kilo", "Oscar", "Tango", "Whiskey"];
-const allGroups2 = ["November", "Victor"];
 
 function showList() {
     const container = document.querySelector(".div_list");
@@ -62,8 +75,8 @@ function showList() {
             return colu;
         };
 
-        const colStudent = createCol("Schüler", allGroups1, "dynlisti");
-        const colTeach = createCol("Lehrperson", allGroups2, "dynlistu");
+        const colStudent = createCol("Schüler", allStudents, "dynlisti");
+        const colTeach = createCol("Lehrperson", allTeachers, "dynlistu");
 
         wrapper.appendChild(colStudent);
         wrapper.appendChild(colTeach);
@@ -81,7 +94,7 @@ function randomChar() {
         return;
     }
 
-    const randChar = allGroups[Math.floor(Math.random() * allGroups.length)];
+    const randChar = allStudents.concat(allTeachers)[Math.floor(Math.random() * (allStudents.length + allTeachers.length))];
 
     const allChars = document.querySelectorAll(".list_wrapper li");
     allChars.forEach(li => {
@@ -91,21 +104,12 @@ function randomChar() {
     });
 }
 
-
-const groups = {
-    five: { items: ["Oscar"], max: 5 },
-    four: { items: ["Alpha", "Golf", "Whiskey"], max: 4 },
-    three: { items: ["Kilo"], max: 3 },
-    two: { items: ["Echo", "Tango"], max: 2 },
-    one: { items: ["November", "Victor"], max: 1 }
-}
-
 function loadMedia() {
     const cloudName = "dnuk6xewd";
     const baseUrl = `https://res.cloudinary.com/${cloudName}/image/upload/`;
     const screen = document.getElementById("screen");
 
-    Object.values(groups).forEach(group => {
+    Object.values(studteach).forEach(group => {
         group.items.forEach(name => {
             const pic = document.createElement("img");
 
