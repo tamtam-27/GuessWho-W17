@@ -10,8 +10,11 @@
 </head>
 
 <body>
-    <div class="black_overlay"></div>
-    <div class="div_regel">
+    <!-- div background of pop-up rules and characters -->
+    <div class="black_overlay hidden"></div>
+
+    <!-- div that showcases the introduction text / rules of the game -->
+    <div class="div_regel hidden">
         <h1 class="head_regel">hello and welcome!</h1>
         <p class="par_regel">
             Eh idk wieso dieser Text überhaupt hier steht, aber jedes Spiel braucht doch ein Intro xD<br>
@@ -31,6 +34,7 @@
         <button class="button_zurück" onclick="showRules()">zurück</button>
     </div>
 
+    <!-- div that showcases the list of characters -->
     <div class="div_list hidden">
         <p class="par_regel">
             Liste von allen Personen:<br>
@@ -39,18 +43,18 @@
         <button class="button_zurück" onclick="showList()">zurück</button>
     </div>
 
+    <!-- div upper showing the three main buttons: rules, characters, reset -->
     <div class="div_buttons">
         <button class="button_regel" onclick="showRules()"> Regel </button>
-
         <button class="button_list" onclick="showList()"> Personen </button>
-
         <button class="button_reset" onclick="darkReset()"> Reset </button>
     </div>
 
+    <!-- container below the buttons, showing 7x9 pictures -->
     <div id="screen"></div>
 
+    <!-- load script -->
     <script src="script.js"></script>
-
 </body>
 
 </html>
