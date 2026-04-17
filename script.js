@@ -15,10 +15,10 @@ const allTeachers = [
 // student/teacher list (49) for loadMedia
 const studteach = {
     five: { items: ["ango", "arna", "juma", "suba", "tang"], max: 5 },
-    four: { items: ["aler", "amla", "gikn", "oehl", "rojä", "yala"], max: 4 },
-    three: { items: ["giga", "jahu", "kawa", "list", "lori", "pazw", "pisc", "sien", "sivo", "zask", "zesi"], max: 3 },
-    two: { items: ["aner", "anik", "anst", "dapf", "dost", "graf", "jest", "kühn", "lowo", "mobe", "reut", "tsch", "wyss"], max: 2 },
-    one: { items: ["boss", "cast", "chen", "dirk", "frei", "fris", "frit", "hoff", "hofm", "jack", "roth", "schm", "stro", "webe"], max: 1 }
+    four: { items: ["aler", "amla", "giga", "gikn", "list", "oehl", "rojä", "tsch", "yala"], max: 4 },
+    three: { items: ["aner", "anst", "dost", "jahu", "kawa", "lori", "pazw", "pisc", "sien", "sivo", "zask", "zesi"], max: 3 },
+    two: { items: ["anik", "boss", "chen", "dapf", "frit", "graf", "hoff", "jest", "kühn", "lowo", "mobe", "reut", "schm", "webe", "wyss"], max: 2 },
+    one: { items: ["cast", "dirk", "frei", "fris", "hofm", "jack", "roth", "stro"], max: 1 }
 }
 
 // bringing studteach items into one array and sort alphabetically
